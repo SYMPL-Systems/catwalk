@@ -270,6 +270,7 @@ div {
 
 .carousel-vertical {
  display: flex;
+ width:60%;
  height: 20rem;
 }
 
@@ -300,12 +301,11 @@ div {
   width: 100%;
  }
 
-
  .slider-wrapper-vertical {
   height: inherit;
   display: flex;
   align-items: center;
-  width: 100%;
+  width: 60%;
  }
 
  .btn {

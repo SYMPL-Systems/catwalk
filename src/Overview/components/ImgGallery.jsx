@@ -31,7 +31,7 @@ class ImgGallery extends React.Component {
   render() {
     return (
       <div className='img-gallery-wrap'>
-        <div className="img-list carousel-list carousel-vertical">
+        <div className="carousel-vertical">
           { this.state.currentStyle ?
           <Slider direction={'vertical'}>
             {this.state.images.map((image, index) => {
