@@ -12,26 +12,32 @@ class Overview extends React.Component {
     this.state = {
       styles: this.props.styles,
       product: this.props.product,
-      currentStyle: this.props.styles
+      currentStyle: this.props.styles,
+      reviewTot: 0
     }
     this.handleStyleClick = this.handleStyleClick.bind(this);
+    this.getProductandStyles = this.getProductandStyles.bind(this);
   }
 
-  componentDidMount() {
-    this.setState({
+  getProductandStyles() {
+    axios.get(`/api/reviews/?product_id=${this.props.product.id}&count=999`)
+    .then((response) => {
+      this.setState({
       styles: this.props.styles,
       product: this.props.product,
-      currentStyle: this.props.styles[0]
+      currentStyle: this.props.styles[0],
+      reviewTot: response.data.results.length
     })
+  })
+}
+
+  componentDidMount() {
+    this.getProductandStyles();
   }
 
   componentDidUpdate (prevProps) {
     if (prevProps !== this.props) {
-      this.setState({
-        styles: this.props.styles,
-        product: this.props.product,
-        currentStyle: this.props.styles[0]
-      })
+      this.getProductandStyles();
     }
   }
 
@@ -47,10 +53,11 @@ class Overview extends React.Component {
  }
 
  render() {
+   console.log(this.state.reviewTot);
     return (
      <div className='overview-widget'>
        <ImgGallery current={this.state.currentStyle}/>
-       <ProductInfo product={this.state.product}/>
+       <ProductInfo product={this.state.product} reviews={this.state.reviewTot}/>
        <StyleSelector styles={this.state.styles} handleClick={this.handleStyleClick}/>
        <AddCart />
     </div>

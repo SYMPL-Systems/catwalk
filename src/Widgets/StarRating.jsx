@@ -8,15 +8,26 @@ class StarRating extends React.Component {
     this.state = {
       avg: 0,
     };
+    this.getStarRating = this.getStarRating.bind(this);
   }
 
-  componentDidMount() {
+  getStarRating() {
     ax.get(`/api/reviews/meta/avg/?product_id=${this.props.product_id}`)
       .then((res) => { this.setState({ avg: Number(res.data)}); })
       .catch((err) => {
         console.error('err in StarRating ax.get to /api/reviews/meta/avg');
         console.dir(err);
       });
+  }
+
+  componentDidMount() {
+    this.getStarRating()
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.product_id !== prevProps.product_id) {
+      this.getStarRating();
+    }
   }
 
   render() {

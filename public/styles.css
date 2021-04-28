@@ -239,9 +239,15 @@ div {
 .add-cart {
   position: absolute;
   border-style: solid;
-  width: 100%;
+  width: 50%;
+  right:0;
   height: 15%;
   bottom: 0;
+}
+
+.add-cart-btn {
+  position: absolute;
+  right:0;
 }
 
 .row-select {
