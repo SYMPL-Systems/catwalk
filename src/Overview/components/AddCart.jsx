@@ -5,7 +5,8 @@ const AddCart = ({currentSkus}) => {
   return (
     <div className='add-cart'>
       <button className='add-cart-btn'>Add to Cart</button>
-      <Dropdown styles={currentSkus}/>
+      <Dropdown style={currentSkus} name='size'/>
+      <Dropdown style={currentSkus} name='quantity'/>
     </div>
   )
 

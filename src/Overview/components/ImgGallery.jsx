@@ -51,6 +51,7 @@ class ImgGallery extends React.Component {
           : <></>
           }
         </div>
+
       </div>
     )
   }

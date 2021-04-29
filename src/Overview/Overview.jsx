@@ -12,8 +12,8 @@ class Overview extends React.Component {
     this.state = {
       styles: this.props.styles,
       product: this.props.product,
-      currentStyle: this.props.styles,
-      reviewTot: 0,
+      currentStyle: [],
+      reviewTot: 0
     }
     this.handleStyleClick = this.handleStyleClick.bind(this);
     this.getProductandStyles = this.getProductandStyles.bind(this);
@@ -54,6 +54,7 @@ class Overview extends React.Component {
  }
 
  render() {
+   console.log(this.state.currentStyle);
     return (
      <div className='overview-widget'>
        <ImgGallery current={this.state.currentStyle} product={this.state.product.description}/>
