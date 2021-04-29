@@ -13,7 +13,7 @@ class Overview extends React.Component {
       styles: this.props.styles,
       product: this.props.product,
       currentStyle: this.props.styles,
-      reviewTot: 0
+      reviewTot: 0,
     }
     this.handleStyleClick = this.handleStyleClick.bind(this);
     this.getProductandStyles = this.getProductandStyles.bind(this);
@@ -26,7 +26,8 @@ class Overview extends React.Component {
       styles: this.props.styles,
       product: this.props.product,
       currentStyle: this.props.styles[0],
-      reviewTot: response.data.results.length
+      reviewTot: response.data.results.length,
+      currentSku: 0
     })
   })
 }
@@ -53,17 +54,17 @@ class Overview extends React.Component {
  }
 
  render() {
-   console.log(this.state.reviewTot);
     return (
      <div className='overview-widget'>
        <ImgGallery current={this.state.currentStyle} product={this.state.product.description}/>
        <ProductInfo product={this.state.product} reviews={this.state.reviewTot}/>
        <StyleSelector styles={this.state.styles} handleClick={this.handleStyleClick}/>
-       <AddCart />
+       <AddCart currentSkus={this.state.currentStyle}/>
     </div>
     )
+  }
  }
-}
+
 
 export default Overview;
 

@@ -1,13 +1,14 @@
 import React from 'react';
 import Dropdown from './DropDown.jsx'
 
-const AddCart = (props) => {
+const AddCart = ({currentSkus}) => {
   return (
     <div className='add-cart'>
       <button className='add-cart-btn'>Add to Cart</button>
-      <Dropdown/>
+      <Dropdown styles={currentSkus}/>
     </div>
   )
+
 }
 
 export default AddCart;

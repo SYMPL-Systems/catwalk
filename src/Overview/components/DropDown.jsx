@@ -5,21 +5,22 @@ class Dropdown extends React.Component {
     super(props);
 
     this.state = {
-      menu: 'Select Size'
+      current: 0
     }
 
   }
-  render() {
-    return (
+
+render() {
+return (
 <form>
 <label className='add-cart-selectsize'>
 Select Size
  <select>
-
+{/*
+  {Object.keys(this.props.currentSkus.skus)} */}
   <option value="grapefruit">Grapefruit</option>
-  <option value="lime">Lime</option>
-  <option value="coconut">Coconut</option>
-  <option value="mango">Mango</option>
+
+
 </select>
 </label>
 </form>
