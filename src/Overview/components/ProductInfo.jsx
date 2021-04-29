@@ -22,7 +22,7 @@ const ProductInfo = ({product, reviews}) => {
       <a href="#" className="fa fa-pintrest"><FaPinterest/></a>
       </div>
 
-      <p>{product.description}</p>
+      <p className='description'>{product.description}</p>
     </div>
   );
 }

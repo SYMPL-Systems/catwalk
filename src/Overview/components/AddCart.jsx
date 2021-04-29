@@ -1,11 +1,11 @@
 import React from 'react';
-import DropDown from '../../Widgets/Dropdown.jsx'
+import Dropdown from './DropDown.jsx'
 
 const AddCart = (props) => {
   return (
     <div className='add-cart'>
       <button className='add-cart-btn'>Add to Cart</button>
-      {/* {/* <DropDown ddLabel={'test'} ddList={'test'} ddVal={'test'}/> */}
+      <Dropdown/>
     </div>
   )
 }

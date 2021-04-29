@@ -36,7 +36,7 @@ class GalleryCarousel extends React.Component {
         {this.props.images.map((image, index) => {
           return (
             <div className={index === this.props.images ? 'slide slide-active' : 'slide'} key={index} >
-              {index === this.state.currentImg && (<img src={image.url}/>)}
+              {index === this.state.currentImg && (<img src={image.url} className='main-img'/>)}
             </div>
           )
         })}

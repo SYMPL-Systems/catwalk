@@ -245,9 +245,19 @@ div {
   bottom: 0;
 }
 
+.select-size {
+  position: absolute;
+  right:0;
+  bottom:1rem;
+}
+
 .add-cart-btn {
   position: absolute;
   right:0;
+}
+
+.add-cart-select-size {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .row-select {
