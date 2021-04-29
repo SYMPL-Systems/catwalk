@@ -1,7 +1,7 @@
 import React from 'react';
-import ax from 'axios';
 import {FaStar, FaStarHalfAlt, FaRegStar} from 'react-icons/fa';
 
+<<<<<<< HEAD
 class StarRating extends React.Component {
   constructor(props) {
     super(props);
@@ -40,9 +40,21 @@ class StarRating extends React.Component {
       } else {
         jsxArr.push(<FaRegStar className="stars" key={i} />);
       }
+=======
+
+ const StarRating = (props) => {
+  var jsxArr =[];
+  for (var i = 1; i <= 5; i++) {
+    if (i <= props.product.avgRating) {
+      jsxArr.push(<FaStar className="stars" key={i} />);
+    } else if (props.product.avgRating === (i - 0.5)) {
+      jsxArr.push(<FaStarHalfAlt className="stars" key={(i-0.5)} />);
+    } else {
+      jsxArr.push(<FaRegStar className="stars" key={i} />);
+>>>>>>> 56d2623a1a38f6a619de69bde6b35b5fa5bef229
     }
-    return(<div>{jsxArr}</div>);
   }
-}
+  return(<div>{jsxArr}</div>);
+};
 
 export default StarRating;
