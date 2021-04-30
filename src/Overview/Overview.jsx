@@ -4,6 +4,7 @@ import axios from 'axios';
 import ImgGallery from './components/ImgGallery.jsx';
 import StyleSelector from './components/StyleSelector.jsx';
 import AddCart from './components/AddCart.jsx';
+import Summary from './components/Summary.jsx';
 
 
 class Overview extends React.Component {
@@ -60,6 +61,7 @@ class Overview extends React.Component {
        <ProductInfo product={this.state.product} reviews={this.state.reviewTot}/>
        <StyleSelector styles={this.state.styles} handleClick={this.handleStyleClick}/>
        <AddCart currentSkus={this.state.currentStyle}/>
+       <Summary product={this.state.product}/>
     </div>
     )
   }
