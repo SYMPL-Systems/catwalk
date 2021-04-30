@@ -15,7 +15,7 @@ class Reviews extends React.Component {
       reviews: [],
       overview: {},
       reviewStars: {},
-      productChars: {},
+      characteristics: {},
     };
     this.changeSort = this.changeSort.bind(this);
     this.moreReviews = this.moreReviews.bind(this);
@@ -52,7 +52,7 @@ class Reviews extends React.Component {
       this.setState({
         overview: {},
         reviewStars: {},
-        productChars: {},
+        characteristics: {},
       });
     } else {
       // total reviews
@@ -82,22 +82,22 @@ class Reviews extends React.Component {
       star4perc = star4perc.toString();
       let star5perc = (Math.round((res.ratings['5']/totalStars)*100));
       star5perc = star5perc.toString();
-      // productchars
-      let productChars = {};
+      // characteristics
+      let characteristics = {};
       if (res.characteristics.Fit) {
-        productChars.Fit = res.characteristics.Fit.value;
+        characteristics.Fit = res.characteristics.Fit.value;
       }
       if (res.characteristics.Comfort) {
-        productChars.Comfort = res.characteristics.Comfort.value;
+        characteristics.Comfort = res.characteristics.Comfort.value;
       }
       if (res.characteristics.Quality) {
-        productChars.Quality = res.characteristics.Quality.value;
+        characteristics.Quality = res.characteristics.Quality.value;
       }
       if (res.characteristics.Length) {
-        productChars.Length = res.characteristics.Length.value;
+        characteristics.Length = res.characteristics.Length.value;
       }
       if (res.characteristics.Width) {
-        productChars.Width = res.characteristics.Width.value;
+        characteristics.Width = res.characteristics.Width.value;
       }
       this.setState({
         overview: {
@@ -112,7 +112,7 @@ class Reviews extends React.Component {
           '4': star4perc,
           '5': star5perc,
         },
-        'productChars': productChars,
+        'characteristics': characteristics,
       });
     }
   }
@@ -144,7 +144,8 @@ class Reviews extends React.Component {
     if (this.props.product === undefined) { return (<></>); }
     else if (Object.keys(this.state.overview).length === 0) {
       return (
-        <div>
+        <div className="reviews">
+          <h2 className="reviews-title">RATINGS & REVIEWS</h2>
           <button type="button">
             write the first review!
           </button>
@@ -153,27 +154,31 @@ class Reviews extends React.Component {
     } else {
       return (
         <div className="reviews">
-          <h3>RATINGS & REVIEWS</h3>
-          <OverviewRatings
-            className="reviews__breakdown"
-            product={this.props.product}
-            product_id={this.state.productID}
-            avgRating={this.state.overview.avgRating}
-          />
-          <OverviewReviews
-            totalReviews={this.state.overview.totReviews}
-            changeSort={this.changeSort}
-          />
-          <Breakdown
-          reviewStars={this.state.reviewStars}
-          productChars={this.state.productChars}
-          />
-          <ReviewList
-            className="reviews__review-list"
-            reviews={this.state.reviews}
-            maxDisp={this.state.maxDisp}
-            moreReviews={this.moreReviews}
-          />
+          <h2 className="reviews-title">RATINGS & REVIEWS</h2>
+          <div className="reviews-container">
+            <div className="reviews-side">
+              <OverviewRatings
+                product={this.props.product}
+                product_id={this.state.productID}
+                avgRating={this.state.overview.avgRating}
+              />
+              <Breakdown
+              reviewStars={this.state.reviewStars}
+              characteristics={this.state.characteristics}
+              />
+            </div>
+            <div className="reviews-main">
+              <OverviewReviews
+                  totalReviews={this.state.overview.totReviews}
+                  changeSort={this.changeSort}
+                />
+              <ReviewList
+                reviews={this.state.reviews}
+                maxDisp={this.state.maxDisp}
+                moreReviews={this.moreReviews}
+              />
+            </div>
+          </div>
         </div>
       );
     }

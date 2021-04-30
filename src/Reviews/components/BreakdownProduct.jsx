@@ -1,11 +1,19 @@
 import React from 'react';
+import {TiArrowSortedDown} from 'react-icons/ti';
 
-const BreakdownProduct = ({productChars}) => {
-  //let {Length, Width, Quality, Comfort, Size, Fit} = props.productChars;
+const BreakdownProduct = ({characteristics}) => {
   return (
-    <div className="breakdown__breakdown-product">
-      {Object.keys(productChars).map((char, i)=>(
-          <p key={i}>{char} = {Number(productChars[char]).toFixed(1)}</p>
+    <div className="reviews-side-breakdown_characteristics">
+      {Object.keys(characteristics).map((characteristic, index)=>(
+          <div className="reviews-side-breakdown_characteristics-item" key={index}>
+            <p className="reviews-side-breakdown_characteristics-item-text">{characteristic}</p>
+            <div className={"reviews-side-breakdown_characteristics-item-slider " + Number(characteristics[characteristic]).toFixed(1)}>
+              <div className="reviews-side-breakdown_characteristics-item-slider-bar"></div>
+              <div className="reviews-side-breakdown_characteristics-item-slider-bar"></div>
+              <div className="reviews-side-breakdown_characteristics-item-slider-bar"></div>
+              <TiArrowSortedDown className="reviews-side-breakdown_characteristics-item-slider-icon" />
+            </div>
+          </div>
       ))}
     </div>
   );

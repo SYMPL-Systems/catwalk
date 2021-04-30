@@ -1,12 +1,10 @@
 import React from 'react';
 import Dropdown from '../../Widgets/Dropdown.jsx'
 
-const OverviewReviews = (props) => {
-  let totalReviews = props.totalReviews;
-  let changeSort = props.changeSort;
+const OverviewReviews = ({totalReviews, changeSort}) => {
   return (
-    <div className="reviews-overview">
-      {totalReviews} reviews, sorted by
+    <div className="reviews-main-overview">
+      <p>{totalReviews + " reviews, sorted by"}</p>
       <Dropdown
         ddLabel="ddReviews"
         ddList={['relevant', 'newest', 'helpful']}
