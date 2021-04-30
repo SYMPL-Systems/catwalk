@@ -7,7 +7,7 @@ const AddCart = ({currentSkus}) => {
     <div className='overview-addCart'>
       <Dropdown style={currentSkus} name='size'/>
       <Dropdown2 />
-      <button className='add-cart-btn btn-dark'>Add to Cart</button>
+      <button className='overview-addcart-btn btn-dark'>Add to Cart</button>
     </div>
   )
 

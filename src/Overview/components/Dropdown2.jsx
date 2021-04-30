@@ -11,7 +11,7 @@ class Dropdown2 extends React.Component {
 render() {
     return (
       <form>
-        <label className='add-cart-dropdown add-cart-btn'>
+        <label className='overview-addcart-dropdown overview-addcart-btn row-menu'>
           Select Quantity
           <select>
           {this.state.quantity.map((item, index) => {

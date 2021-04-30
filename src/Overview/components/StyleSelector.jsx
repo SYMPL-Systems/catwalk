@@ -9,7 +9,7 @@ const StyleSelector = (props) => {
   return (
     <div className='overview-styles style-select'>
       <div>
-      <p className='style-head'>{props.styles ? props.name : <></> }</p>
+      <h3 className='overview-styles-head'>{props.styles ? props.name : <></> }</h3>
       </div>
       <div className="style-select-img">
         { props.styles ?

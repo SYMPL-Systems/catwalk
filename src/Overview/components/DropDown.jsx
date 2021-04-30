@@ -8,7 +8,7 @@ class Dropdown extends React.Component {
 render() {
     return (
       <form>
-        <label className='add-cart-dropdown add-cart-btn'>
+        <label className='overview-addcart-dropdown overview-addcart-btn'>
           {this.props.name === 'size' ? 'Select Size' : 'Select Quantity'}
 
           <select>
