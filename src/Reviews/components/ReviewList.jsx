@@ -2,7 +2,6 @@ import React from 'react';
 import ReviewListItem from './ReviewListItem.jsx';
 
 class ReviewList extends React.Component {
-//const ReviewList = ({reviews, maxDisp, moreReviews}) => {
   constructor(props) {
     super(props);
     this.state = {
@@ -10,33 +9,23 @@ class ReviewList extends React.Component {
     };
   }
 
-  componentDidMount() { }
-
-  componentDidUpdate() {
-    //
-  }
-
   render() {
     if (!this.props.reviews) { return(<></>); }
     else if (this.props.reviews.length === this.props.maxDisp) {
       return (
-        <div>
-          <div className="reviews__review-list">
+        <div className="reviews-main-view">
+          <div className="reviews-main-view-list">
             {this.props.reviews.map((review, i) => {
               if (i < this.props.maxDisp) {
-                return(
-                  <div key={i} className="review-list__list-item">
-                    <ReviewListItem review={review} />
-                  </div>
-                );
-                }
+                return <ReviewListItem review={review} key={i} />
+              }
             })}
           </div>
-          <div className="reviews_buttons">
-            <button type="button" disabled>
+          <div className="reviews-main-view-buttons">
+            <button className="btn-review" disabled>
               More Reviews
             </button>
-            <button type="button">
+            <button className="btn-review">
               Add a Review +
             </button>
           </div>
@@ -44,24 +33,24 @@ class ReviewList extends React.Component {
       );
     } else {
       return (
-        <div>
-          <div className="reviews__review-list">
+        <div className="reviews-main-view">
+          <div className="reviews-main-view-list">
             {this.props.reviews.map((review, i) => {
               if (i < this.props.maxDisp) {
                 return(
-                  <div key={i} className="review-list__list-item">
+                  <div key={i} className="reviews-main-view-list-item">
                     <ReviewListItem review={review} />
                   </div>
                 );
                 }
             })}
           </div>
-          <div className="reviews_buttons">
-            <button type="button" onClick={this.props.moreReviews}>
-              More Reviews
+          <div className="reviews-main-view-buttons">
+            <button className="btn-review" onClick={this.props.moreReviews}>
+              MORE REVIEWS
             </button>
-            <button type="button">
-              Add a Review +
+            <button className="btn-review">
+              ADD A REVIEW +
             </button>
           </div>
         </div>

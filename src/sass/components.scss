@@ -378,13 +378,148 @@
   font-size: 1rem;
 }
 
-// .add-answer-modal,
-// .add-question-modal {
-//   position: absolute;
-//   top: 10%;
-//   bottom: 10%;
-//   left: 15%;
-//   right: 15%;
-//   background-color: #EDEBE8;
-//   overflow: scroll;
-// }
+.add-answer-modal,
+.add-question-modal {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 15%;
+  right: 15%;
+  background-color: #EDEBE8;
+  overflow: scroll;
+}
+
+////////// REVIEWS
+
+.reviews {
+  margin: 2rem 0;
+  min-height: 15vh;
+  max-height: 100vh;
+
+  &-title {
+    margin-top: 2rem;
+    font-weight: 100;
+    font-size: 1.3rem;
+  }
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-side {
+    width: 25%;
+    &-rating {
+      display: flex;
+
+      &_avg {
+        font-size: 5rem;
+        font-weight: 700;
+      }
+    }
+
+    &-breakdown {
+      &_ratings {
+        &-item {
+          &-text {
+
+          }
+          &-bar-container {
+
+          }
+
+          &-bar-1 {
+
+          }
+
+          &-bar-2 {
+
+          }
+        }
+      }
+
+      &_characteristics {
+        &-item {
+          &-text {
+
+          }
+          &-slider {
+            &-bar {
+
+            }
+
+            &-icon {
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-main {
+    width: 75%;
+
+    &-overview {
+      display: flex;
+      width: 50%;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    &-view {
+      &-list {
+        &-item {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          border-bottom: 1px solid #000;
+
+
+          &-header {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+          }
+
+          &-summary {
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+          }
+
+          &-body {
+            margin-bottom: 1rem;
+          }
+
+          &-response {
+            margin-bottom: 1rem;
+            background-color: var(--color-grey-light-1);
+          }
+
+          &-interactions {
+            display: flex;
+            justify-content: space-between;
+            width: 30%;
+            margin-bottom: 2rem;
+          }
+        }
+      }
+
+      &-buttons {
+        margin-top: 3rem;
+        display: flex;
+        justify-content: space-between;
+        width: 25%;
+      }
+    }
+  }
+}
+
+.btn-review {
+  padding: 1rem;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+}

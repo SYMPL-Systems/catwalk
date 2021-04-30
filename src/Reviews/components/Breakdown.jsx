@@ -2,11 +2,11 @@ import React from 'react';
 import BreakdownProduct from './BreakdownProduct';
 import BreakdownRatings from './BreakdownRatings';
 
-const Breakdown = (props) => {
+const Breakdown = ({reviewStars, characteristics}) => {
   return (
-    <div className="reviews__breakdown">
-      <BreakdownRatings reviewStars={props.reviewStars} />
-      <BreakdownProduct productChars={props.productChars} />
+    <div className="reviews-side-breakdown">
+      <BreakdownRatings reviewStars={reviewStars} />
+      <BreakdownProduct characteristics={characteristics} />
     </div>
   );
 };
