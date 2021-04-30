@@ -30,28 +30,28 @@ class ImgGallery extends React.Component {
 
   render() {
     return (
-      <div className='img-gallery-wrap'>
-        <div className="carousel-vertical">
+      <div className='overview-gallery-container img-gallery-wrap'>
+        <div className="overview-list carousel-list carousel-vertical">
           { this.state.currentStyle ?
           <Slider direction={'vertical'}>
             {this.state.images.map((image, index) => {
               return (
-                <div key={index} >
-                  <img src={image.thumbnail_url} className='thumbnail-gallery'
-                  id={index} onClick={this.handleListClick}/>
+                <div className="overview-list-item">
+                  <img src={image.thumbnail_url} className='overview-list-item-img'
+                  id={index} onClick={this.handleListClick}
+                  key={index} />
                 </div>
               )
             })}
           </Slider> : <></>
           }
         </div>
-        <div className="gallery-img">
+        <div className="overview-main gallery-img">
           {this.state.currentStyle ?
           <GalleryCarousel images={this.state.images} currentImg={this.state.currentImg} handleClick={this.handleListClick}/>
           : <></>
           }
         </div>
-
       </div>
     )
   }

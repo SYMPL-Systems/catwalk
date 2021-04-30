@@ -7,7 +7,7 @@ import {FaPinterest} from 'react-icons/fa'
 const ProductInfo = ({product, reviews}) => {
 
   return (
-    <div className='overview-widget-productInfo'>
+    <div className='overview-productInfo'>
       <div>
        <div className='stars-reviews'>
          <StarRating product={product} />

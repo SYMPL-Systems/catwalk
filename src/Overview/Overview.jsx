@@ -54,9 +54,8 @@ class Overview extends React.Component {
  }
 
  render() {
-   console.log(this.state.currentStyle);
     return (
-     <div className='overview-widget'>
+     <div className='overview'>
        <ImgGallery current={this.state.currentStyle} product={this.state.product.description}/>
        <ProductInfo product={this.state.product} reviews={this.state.reviewTot}/>
        <StyleSelector styles={this.state.styles} handleClick={this.handleStyleClick}/>

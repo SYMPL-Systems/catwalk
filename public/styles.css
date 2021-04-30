@@ -65,35 +65,25 @@ body {
         height: 2.75rem; }
 
 /* OVERVIEW========================================= */
-.overview-widget {
-  position: relative;
-  text-align: left;
-  border-color: cadetblue;
-  border-style: solid;
-  height: 90vh; }
+.overview {
+  height: 90vh;
+  display: grid;
+  grid-template-columns: 50% 10% 40%;
+  grid-template-rows: 20% auto 20%;
+  grid-template-areas: "gallery . info" "gallery . styles" ". . cart"; }
 
-.overview-widget-productInfo {
-  font-size: 1.5rem;
-  position: absolute;
-  min-height: 150px;
-  width: 340px;
-  top: 18rem;
-  right: 8rem; }
+.overview-gallery-container {
+  grid-area: 'gallery'; }
 
-.style-select {
-  position: absolute;
-  bottom: 14rem;
-  right: 0;
-  font-size: 2rem;
-  display: flex;
-  width: 50%;
-  font-size: 1.5rem; }
+.overview-productInfo {
+  grid-area: 'info'; }
 
-.add-cart {
-  position: absolute;
-  width: 50%;
-  height: 15%;
-  bottom: 0; }
+.overview-styles {
+  grid-area: 'styles'; }
+
+.overview-addCart {
+  grid-area: 'cart';
+  align-self: start; }
 
 .row-select {
   display: inline-block; }
@@ -111,12 +101,9 @@ body {
   margin: auto; }
 
 .carousel-vertical {
-  display: flex;
-  height: 20rem; }
-
-.img-gallery-wrap {
-  position: relative;
-  height: 40rem; }
+  height: 10rem;
+  width: 50%;
+  left: 0; }
 
 .thumbnail {
   /* flex-shrink: 0; */
@@ -125,22 +112,41 @@ body {
   height: 140px;
   object-fit: cover; }
 
-.thumbnail-gallery {
+.overview-list-item-img {
   /* flex-shrink: 0; */
   padding: 10px;
-  width: 15rem;
+  width: 10rem;
   height: 8rem;
   object-fit: cover; }
 
 .gallery-img img {
-  padding: 5px 20px;
   height: 40rem;
   left: 0; }
 
-.gallery-img {
-  position: absolute;
-  top: 15rem;
-  height: 30rem; }
+.add-cart-btn {
+  cursor: pointer;
+  border-radius: 0px;
+  text-decoration: none;
+  padding: 12px 18px;
+  font-size: 12px;
+  line-height: 19px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  letter-spacing: 3px;
+  border: solid 2px #fff;
+  background: #fff;
+  color: #1f1f1f !important;
+  -webkit-transition: all .4s ease-in-out;
+  -moz-transition: all .4s ease-in-out;
+  -ms-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out; }
+
+.btn-dark {
+  border: solid 2px #fff;
+  background: #fff;
+  color: #1f1f1f !important; }
 
 .fa {
   padding-right: 10px; }
