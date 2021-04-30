@@ -73,7 +73,8 @@ body {
   grid-template-areas: "gallery . info" "gallery . styles" ". . cart"; }
 
 .overview-gallery-container {
-  grid-area: 'gallery'; }
+  grid-area: 'gallery';
+  justify-items: left; }
 
 .overview-productInfo {
   grid-area: 'info'; }
@@ -122,6 +123,9 @@ body {
 .gallery-img img {
   height: 40rem;
   left: 0; }
+
+.arrow-right {
+  right: 0; }
 
 .add-cart-btn {
   cursor: pointer;
