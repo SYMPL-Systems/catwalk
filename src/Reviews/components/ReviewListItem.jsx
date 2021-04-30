@@ -1,5 +1,6 @@
 import React from 'react';
 import ax from 'axios';
+import StarRating from '../../Widgets/StarRating.jsx';
 
 class ReviewListItem extends React.Component {
   constructor(props) {
@@ -53,41 +54,41 @@ class ReviewListItem extends React.Component {
       helpfulness,
       photos
     } = this.props.review;
-    //console.dir(photos);
+
     date = new Date(Date.parse(date)).toLocaleString('en-US',{dateStyle:'long'});
-    // add no or report after Helpful? Yes? ???
+
     return (
-      <div id={review_id}>
-        <span className="list-item__star-rating">
-          ***** ({rating}) &nbsp;
-        </span>
-        <span className="list-item__reviewer-name">
-          {reviewer_name} &nbsp;
-        </span>
-        <span className="list-item__date">
-          {date} &nbsp;
-        </span>
-        <br />
-        <h4>{summary}</h4>
-        <p>{body}</p>
-        { (response) ?
-          <div>
-            <span><p><b>Response:</b></p></span>
-            <span><p>{response}</p></span>
-          </div>
-          : null
+      <>
+        <div className="reviews-main-view-list-item-header">
+          <StarRating rating={rating} />
+          <p>{reviewer_name + ', ' + date}</p>
+        </div>
+        { summary ?
+        <div className="reviews-main-view-list-item-summary">
+          <h3>{summary}</h3>
+        </div>
+        : <></>
         }
-        <br />
-        <p>Helpful?</p>
-        <u onClick={() => {this.helpfulReview(review_id)}}>
-          Yes
-        </u> ({this.state.helpfulness})
-        &nbsp;|&nbsp;
-        <u onClick={() => {this.reportReview(review_id)}}>
-          Report
-        </u>
-        <hr />
-      </div>
+        <p className="reviews-main-view-list-item-body">
+          {body}
+        </p>
+        { response ?
+          <div className="reviews-main-view-list-item-response">
+            <h4>Response:</h4>
+            <p>{response}</p>
+          </div>
+          : <></>
+        }
+        <div className="reviews-main-view-list-item-interactions">
+          <p>Helpful?</p>
+          <button className="btn_" onClick={() => {this.helpfulReview(review_id)}}>
+            {`Yes (${this.state.helpfulness})`}
+          </button>
+          <button className="btn_" onClick={() => {this.reportReview(review_id)}}>
+            Report
+          </button>
+          </div>
+      </>
     );
   }
 };

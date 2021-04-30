@@ -23,12 +23,13 @@ class DropDown extends React.Component {
     let ddList = this.props.ddList;
     let ddVal = this.props.ddVal;
     return (
-      <div>
+      <form>
         <label htmlFor="dropdown">
           <select
             id={ddLabel}
             onChange={this.handleChange}
             defaultValue={ddVal}
+            className="dropdown-select"
           >
             {ddList.map((option, i) => {
               return (
@@ -37,7 +38,7 @@ class DropDown extends React.Component {
             })}
           </select>
         </label>
-      </div>
+      </form>
     );
   }
 }
