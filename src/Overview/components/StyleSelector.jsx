@@ -4,13 +4,12 @@ const StyleSelector = (props) => {
 
   const styleClicked = (e) => {
     props.handleClick(e.target.id);
-    console.log('click');
   }
 
   return (
-    <div className='style-select'>
+    <div className='overview-styles style-select'>
       <div>
-      <p className='style-head'>{props.styles ? props.styles[0].name : <></> }</p>
+      <h3 className='overview-styles-head'>{props.styles ? props.name : <></> }</h3>
       </div>
       <div className="style-select-img">
         { props.styles ?

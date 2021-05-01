@@ -1,5 +1,6 @@
 import React from 'react';
 import {AiOutlineArrowLeft, AiOutlineArrowRight} from 'react-icons/ai';
+import Slider from './Slider.jsx'
 
 class GalleryCarousel extends React.Component {
   constructor(props) {
@@ -30,19 +31,22 @@ class GalleryCarousel extends React.Component {
 
   render() {
     return (
+
       <section className="carousel carousel-gallery">
         {this.state.currentImg === 0 ? <></> : <AiOutlineArrowLeft className="arrow-left" onClick={this.prevSlide} />}
 
         {this.props.images.map((image, index) => {
           return (
             <div className={index === this.props.images ? 'slide slide-active' : 'slide'} key={index} >
-              {index === this.state.currentImg && (<img src={image.url}/>)}
+              {index === this.state.currentImg && (<img src={image.url} className='main-img-img'/>)}
             </div>
           )
         })}
 
         {this.state.currentImg === this.props.images.length - 1? <></> : <AiOutlineArrowRight className="arrow-right" onClick={this.nextSlide} />}
       </section>
+
+
     )
   }
 }
