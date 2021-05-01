@@ -67,18 +67,18 @@
 }
 
 .overview-productInfo {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: 'fantasy';
   position: absolute;
   min-height: 80rem;
-  top: 10rem;
+  top: 12rem;
   right: 40rem;
   // grid-area: 'info';
 }
 
 .overview-styles {
   position: absolute;
-  bottom: 22rem;
+  bottom: 25rem;
   right:0;
   font-size: 2rem;
   display: flex;
@@ -100,7 +100,7 @@
 
 .overview-summary {
   position: absolute;
-  bottom: 2rem;
+  bottom: 6rem;
   width: 40%;
 
   &-title {
@@ -144,6 +144,10 @@
   width: 140px;
   height: 140px;
   object-fit: cover;
+}
+
+.test {
+  padding-top: 1rem;
 }
 
 
